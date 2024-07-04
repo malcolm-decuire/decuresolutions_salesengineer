@@ -34,7 +34,7 @@ export function Hero() {
         Engineer
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700 font-bold">
-        "Driving success through tailored solutions and technical mastery."
+        Driving success through tailored solutions and technical mastery
       </p>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
       Sales/Solutions/Go-To-Market Engineer describes a technical stakeholder assisting sales & product to close new business.
