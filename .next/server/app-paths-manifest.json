@@ -1,6 +1,7 @@
 {
-  "/investment_calc/page": "app/investment_calc/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+  "/investment_calc/page": "app/investment_calc/page.js",
   "/page": "app/page.js",
-  "/rent_calc/page": "app/rent_calc/page.js"
+  "/rent_calc/page": "app/rent_calc/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

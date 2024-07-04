@@ -37,7 +37,7 @@ export function Hero() {
       Driving success through tailored solutions and technical mastery. 
       </p>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-      For the last +8 years I've been worked with teams to craft innovative solutions that redefine possibilities, one line of code at a time.
+      For the last +8 years I have worked with teams to craft innovative solutions that redefine possibilities, one line of code at a time.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="https://www.calendly.com/malcolm-decuire">Calendly</Button>
@@ -51,7 +51,7 @@ export function Hero() {
           >
             <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z" />
           </svg>
-          <span className="ml-3">Favorite 'The Office' Episode</span>
+          <span className="ml-3">Favorite `The Office` Episode</span>
         </Button>
       </div>
       <div className="mt-36 lg:mt-44">

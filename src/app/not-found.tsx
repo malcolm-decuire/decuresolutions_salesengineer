@@ -20,7 +20,7 @@ export default function NotFound() {
         Thank you for your patience while I update this app.
       </p>
       <Button href="/" className="mt-10">
-        Visit Malcolm Decuire's Page 
+        Visit the Malcolm Decuire page 
       </Button>
     </SlimLayout>
   )

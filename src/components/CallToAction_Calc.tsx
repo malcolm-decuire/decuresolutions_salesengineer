@@ -28,7 +28,7 @@ export function CallToActionCalc() {
             I have an intense passion for multidiscplinary work with a clear commericial outcome. 
           </p>
           <p className="mt-4 text-lg tracking-tight text-white">
-            Here's an example of how I work w/ developers & subject matter experts to develop free real estate tools. 
+            Here is an example of how I work w/ developers & subject matter experts to develop free real estate tools. 
           </p>
           <Button href="/rent_calc" color="white" className="mt-5 sm:mt-10">
             Rent Calc.

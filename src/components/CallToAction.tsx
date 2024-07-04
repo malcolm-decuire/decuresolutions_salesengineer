@@ -24,7 +24,7 @@ export function CallToAction() {
             Book A Call
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            Let's talk through any GTM, pre-sales, or post-sales challenges your team is facing
+            Let us talk through any GTM, pre-sales, or post-sales challenges your team is facing
           </p>
           <Button href="https://www.calendly.com/malcolm-decuire" color="white" className="mt-10">
             Calendly
