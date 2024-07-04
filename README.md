@@ -33,6 +33,7 @@ npm run dev
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
 
 ## How do I implement my own customization
+- Edit the components folder -> Hero/Footer/PrimaryFeatures/SecondaryFeatures 
 
 ### Files to Edit for personal use 
 - src/app/page.tsx 'Landing page with all next links in them'
@@ -40,10 +41,10 @@ Finally, open [http://localhost:3000](http://localhost:3000) in your browser to 
 - theme & ThemeProviders 'for customizing the calculators'
 
 ## Product Roadmap 
-- Q32024: Fix bugs in investment calculator & and reconfigure theme
+- Q32024: Fix mobile formatting, investment calc issues w/ step2 & step3 PITI & Financig Expense
 - Q32024: General extend calculators for educational use and multiple languages 
-- Q42024: Integrate Pergion API into landing as a feed for all things real estate 
-- Q12025: Deploy PrivateGPT on self-hosted service that focuses on fintech problems only
+- Q42024: Integrate w/ Pergion API, Nasdaq API into landing as a feed for all things real estate 
+- Q12025: Deploy PrivateGPT on self-hosted service that focuses on proptech topics
 
 ## Creative Commons Licenses
 
