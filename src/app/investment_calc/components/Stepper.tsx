@@ -1,3 +1,7 @@
+///////////////////////////////////////
+//20240704 bad coding habits die hard
+////////////////////////////////////
+
 // 'use client';
 // import { useTheme } from '@emotion/react';
 // import { Box, Step, StepLabel, Stepper as MuiStepper, useMediaQuery, CircularProgress } from '@mui/material';

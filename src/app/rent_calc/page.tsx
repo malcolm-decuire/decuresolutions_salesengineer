@@ -190,12 +190,13 @@
 // }
 
 // export default Home;
-
-
-///////////////////
+///////////////////////////////////////////////////////////////////////
+//its bad practice to leave a fragment of code above that works but isnt active in the production environment 
+////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 'use client'
-import { Button} from "@/components/Button";
+import Button from "../investment_calc/components/Button";
 import Input from "@/components/Input";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react";

@@ -9,3 +9,7 @@ const Slider = (props: SliderProps) => (
 )
 
 export default Slider
+
+///////////////////////////////////////
+//20240704 bad coding habits die hard
+////////////////////////////////////

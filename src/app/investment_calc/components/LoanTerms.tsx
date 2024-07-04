@@ -1,3 +1,7 @@
+///////////////////////////////////////
+//20240704 bad coding habits die hard
+////////////////////////////////////
+
 import Input from './Input';
 import Slider from './Slider';
 import { Box } from '@mui/material';

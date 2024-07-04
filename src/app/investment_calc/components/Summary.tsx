@@ -1,3 +1,7 @@
+///////////////////////////////////////
+//20240704 bad coding habits die hard
+////////////////////////////////////
+
 // 'use client'
 // import { Box } from '@mui/material'
 // import React from 'react'
