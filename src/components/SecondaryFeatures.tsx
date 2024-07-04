@@ -71,7 +71,7 @@ const features: Array<Feature> = [
   {
     name: 'Sales Enablement',
     summary:
-      'Design & execute a territory plan to hit a +$500k quota', 
+      'Augment sales team to hit a +$500k quota via simplifying complexing processes', 
     description:
       'Collaborate w/ engineering, product marketing, and sales teams deliver on custom client requests.',
     image: casestudy3,
@@ -117,7 +117,7 @@ const features: Array<Feature> = [
   {
     name: 'RFIs & RFPs',
     summary:
-      'Leverage privatey & accounting background to tackle complex client requirements', 
+      'Leverage private equity & accounting background to tackle complex client requirements', 
     description:
       'Act as technical guide to sales & legal teams to verify client documentation and SOWs.',
     image: casestudy3,

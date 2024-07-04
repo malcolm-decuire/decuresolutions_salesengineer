@@ -60,11 +60,11 @@ const testimonials = [
     },
     {
       content:
-        'The hardest thing to do is to be true to yourself, especially when everybod is watching',
+        'The hardest thing to do is to be true to yourself, especially when everybody is watching',
       author: {
         name: 'Dave Chappelle',
         role: 'Comedy Central',
-        image: avatarImage4,
+        image: avatarImage5,
       },
     },
   ],

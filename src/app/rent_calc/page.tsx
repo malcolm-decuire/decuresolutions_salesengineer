@@ -201,7 +201,7 @@ import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import Slider from "@/components/Slider";
+import Slider from "@/app/investment_calc/components/Slider";
 import dynamic from 'next/dynamic';
 
 const Chart = dynamic(() => import('@/components/Chart'), { ssr: false });

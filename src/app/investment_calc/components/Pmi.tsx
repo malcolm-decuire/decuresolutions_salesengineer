@@ -1,5 +1,5 @@
-import Input from '@/components/Input';
-import Slider from '@/components/Slider';
+import Input from './Input';
+import Slider from './Slider';
 import { Box } from '@mui/material';
 import React from 'react'
 import { Control, Controller } from 'react-hook-form';

@@ -2,7 +2,7 @@
 import { Box } from '@mui/material'
 import React, { useState } from 'react'
 import Welcome from './components/Welcome'
-import Stepper from '@/components/Stepper';
+import Stepper from './components/Stepper';
 import LoanTerms, { ILoanTermsCalculatedValues, ILoanTermsFormValues } from './components/LoanTerms';
 import Revenue, { IRevenueCalculatedValues, IRevenueFormValues } from './components/Revenue';
 import { useForm } from 'react-hook-form';

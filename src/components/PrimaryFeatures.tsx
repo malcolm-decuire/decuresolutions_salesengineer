@@ -81,10 +81,10 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Connective tissue between sales, engineering, and product 
+            MOTTO: serve as the connective layer between teams
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            I enjoy cross-functional creation & delivering beyond client expectations 
+            I enjoy empowering clients with personalized tech strategies for growth 
           </p>
         </div>
         <TabGroup

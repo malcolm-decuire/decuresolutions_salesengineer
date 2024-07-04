@@ -29,8 +29,19 @@ export function CallToAction() {
           <Button href="https://www.calendly.com/malcolm-decuire" color="white" className="mt-10">
             Calendly
           </Button>
+          <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
+            Delve into my nerdy interests. 
+          </h2>
+          <p className="mt-4 text-lg tracking-tight text-white">
+            Discover world of interconnectivity, illuminated through a personal knowledge graph
+          </p>
+          <Button href="https://publish.obsidian.md/malcolm-decuire" color="white" className="mt-10">
+            Obsidian Graph
+          </Button>
         </div>
       </Container>
     </section>
   )
 }
+
+

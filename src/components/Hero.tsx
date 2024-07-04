@@ -34,10 +34,10 @@ export function Hero() {
         problem-solver
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-      Sales/Solutions/GTM Engineer describes technical stakeholder assisting Sales teams close & renew business. 
+      Driving success through tailored solutions and technical mastery. 
       </p>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-      For the last +8 years my responsibilities included: present demos, answer technical questions, test APIs, respond to RFPs & RFIs, scope potential partner integrations, scope closed/won deals for feasibility, communicate features to Product, initiate implementations, create new documentation, and travel to conference events and some client sites.
+      For the last +8 years I've been worked with teams to craft innovative solutions that redefine possibilities, one line of code at a time.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="https://www.calendly.com/malcolm-decuire">Calendly</Button>
