@@ -1,5 +1,5 @@
 'use client';
-import { Box } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import React, { useState } from 'react'
 import Welcome from './components/Welcome'
 import Stepper from './components/Stepper';
@@ -150,19 +150,21 @@ const Calculator2 = () => {
       Number(formValues.otherDebtMonthlyPayment)
     ),
   }
-
+//2024074 make the investment cal movile responsive 
   return (
-    <Box className="w-[1200px] max-w-100vw-32px mx-auto">
+    <Box className="container mx-auto">
       {flowMode === FlowMode.START && <Welcome onStart={() => setFlowMode(FlowMode.STEPPER)} />}
       {flowMode === FlowMode.STEPPER && (
-        <Box className="w-full mx-auto overflow-auto blat">
-          <Stepper
-            steps={steps}
-            data={{ data }}
-            control={control}
-            onFlowComplete={() => setFlowMode(FlowMode.SUMMARY)}
-          />
-        </Box>
+        <Grid container spacing={2} className="overflow-auto">
+          <Grid item xs={12}>
+            <Stepper
+              steps={steps}
+              data={{ data }}
+              control={control}
+              onFlowComplete={() => setFlowMode(FlowMode.SUMMARY)}
+            />
+          </Grid>
+        </Grid>
       )}
       {flowMode === FlowMode.SUMMARY && <Summary data={data} />}
     </Box>
