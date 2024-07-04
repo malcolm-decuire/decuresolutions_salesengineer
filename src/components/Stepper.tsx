@@ -4,7 +4,7 @@ import { Box, Step, StepLabel, Stepper as MuiStepper, useMediaQuery, CircularPro
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import React, { useState } from 'react'
-import Button from './Button';
+import { Button } from './Button';
 import { Control } from 'react-hook-form';
 
 interface IStepData {
