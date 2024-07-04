@@ -7,7 +7,7 @@ import PercentIcon from '@mui/icons-material/Percent';
 import DifferenceIcon from '@mui/icons-material/Difference';
 import PaymentIcon from '@mui/icons-material/Payment';
 import SavingsIcon from '@mui/icons-material/Savings';
-import { Button } from '@/components/Button';
+import Button  from './Button';
 import HomeIcon from '@mui/icons-material/Home';
 import VillaIcon from '@mui/icons-material/Villa';
 
