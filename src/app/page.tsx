@@ -1,29 +1,6 @@
-// import { CallToAction } from '@/components/CallToAction'
-// import { Footer } from '@/components/Footer'
-// import { Header } from '@/components/Header'
-// import { Hero } from '@/components/Hero'
-// import { PrimaryFeatures } from '@/components/PrimaryFeatures'
-// import { SecondaryFeatures } from '@/components/SecondaryFeatures'
-// import { Testimonials } from '@/components/Testimonials'
-// import { CallToActionCalc } from '@/components/CallToAction_Calc'
-
-// export default function Home() {
-//   return (
-//     <>
-//       <Header />
-//       <main>
-//         <Hero />
-//         <PrimaryFeatures />
-//         <SecondaryFeatures />
-//         <CallToAction />
-//         <Testimonials /> 
-//         <CallToActionCalc />  
-//       </main>
-//       <Footer />
-//     </>
-//   )
-// }
-
+/////////////////////////////////////////////////////////////////////////////////
+//20240704 chg to get rid of mobile white space on right side 
+////////////////////////////////////////////////////////////////////////////////
 'use client';
 import { useEffect, useState } from 'react';
 import { CallToAction } from '@/components/CallToAction';
@@ -35,15 +12,14 @@ import { SecondaryFeatures } from '@/components/SecondaryFeatures';
 import { Testimonials } from '@/components/Testimonials';
 import { CallToActionCalc } from '@/components/CallToAction_Calc';
 
-//20240704 handle screensize issues 
 interface HomeProps {}
 
 const Home: React.FC<HomeProps> = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false); // Added type boolean to useState
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 1024 || window.innerHeight < 768); // Adjust these values as needed
+      setIsSmallScreen(window.innerWidth < 1024 || window.innerHeight < 768);
     };
 
     handleResize();
@@ -55,7 +31,7 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <>
       <Header />
-      <main style={isSmallScreen ? { display: 'flex', flexDirection: 'column', alignItems: 'center' } : {}}>
+      <main className="main-container">
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
@@ -64,9 +40,23 @@ const Home: React.FC<HomeProps> = () => {
         <CallToActionCalc />
       </main>
       <Footer />
+
+      <style jsx>{`
+        .main-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 16px; /* Adjust padding as needed */
+        }
+
+        @media (min-width: 1024px) {
+          .main-container {
+            padding: 0 32px; /* Larger padding for larger screens */
+          }
+        }
+      `}</style>
     </>
   );
 };
 
 export default Home;
-
