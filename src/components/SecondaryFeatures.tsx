@@ -1,14 +1,9 @@
 'use client'
-
 import { useId } from 'react'
 import Image, { type ImageProps } from 'next/image'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
-
 import { Container } from '@/components/Container'
-// import screenshotContacts from '@/images/screenshots/contacts.png'
-// import screenshotInventory from '@/images/screenshots/inventory.png'
-// import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
 import casestudy1 from '@/images/screenshots/decuresolutions_casestudy_it_business.png'
 import casestudy2 from '@/images/screenshots/decuresolutions_casestudy_realestate.png'
 import casestudy3 from '@/images/screenshots/decuresolutions_casestudy_saas.png'
@@ -205,25 +200,26 @@ function Feature({
 
 function FeaturesMobile() {
   return (
-    <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
+    <div className="mt-20 flex flex-col gap-y-10 px-4 sm:px-6 lg:hidden">
       {features.map((feature) => (
-        <div key={feature.summary}>
-          <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
+        <div key={feature.summary} className="mx-auto max-w-2xl">
+          <Feature feature={feature} isActive />
           <div className="relative mt-10 pb-10">
             <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
-            <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+            <div className="relative mx-auto w-full max-w-[calc(100vw-2rem)] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
               <Image
                 className="w-full"
                 src={feature.image}
                 alt=""
-                sizes="52.75rem"
+                width={1065} // Adjust according to your image aspect ratio
+                height={600} // Adjust according to your image aspect ratio
               />
             </div>
           </div>
         </div>
       ))}
     </div>
-  )
+  );
 }
 
 function FeaturesDesktop() {
@@ -303,3 +299,10 @@ export function SecondaryFeatures() {
     </section>
   )
 }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//20240704 changes 
