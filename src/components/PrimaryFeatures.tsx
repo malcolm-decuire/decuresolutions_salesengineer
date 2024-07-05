@@ -33,7 +33,7 @@ const features = [
   {
     title: 'P2P',
     description:
-    "Partnered with VP of Marketing & Engineering teams to deliver .",
+    "Partnered with VP of Marketing & Engineering teams to deliver scalable outreach.",
     image: resume3,
   },
   {
@@ -81,7 +81,7 @@ export function PrimaryFeatures() {
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            MOTTO: serve as the connective layer between teams
+            MOTTO: serve as the connective layer between sales & engineering
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
             I enjoy empowering clients with personalized tech strategies for growth 
