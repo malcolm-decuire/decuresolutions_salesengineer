@@ -1,0 +1,30 @@
+node_modules/
+.DS_Store
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# environment files
+.env*
+
+# editor
+.vscode/
+
+# workspace app build output
+demo/.next/
+demo/.vercel/
+demo/next-env.d.ts
+demo/*.tsbuildinfo
+
+# unused template/source noise not needed for deployment
+/components/
+/pages/
+/tailwind.css
+/README.md
+/CHANGELOG.md
+/cheatsheet.md
+/LICENSE.md
+/demo/LICENSE.md

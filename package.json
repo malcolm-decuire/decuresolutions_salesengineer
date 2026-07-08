@@ -1,0 +1,17 @@
+{
+  "name": "decuresolutions_se_20250706",
+  "private": true,
+  "workspaces": [
+    "demo"
+  ],
+  "scripts": {
+    "dev": "npm --workspace demo run dev",
+    "build": "npm --workspace demo run build",
+    "start": "npm --workspace demo run start",
+    "lint": "npm --workspace demo run lint"
+  },
+  "dependencies": {
+    "@heroui/react": "^3.2.2",
+    "@iconify/react": "^6.0.2"
+  }
+}
