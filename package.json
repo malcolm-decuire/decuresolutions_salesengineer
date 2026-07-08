@@ -6,7 +6,7 @@
   ],
   "scripts": {
     "dev": "npm --workspace demo run dev",
-    "build": "npm --workspace demo run build",
+    "build": "npm --workspace demo run build && rm -rf .next && cp -R demo/.next .next",
     "start": "npm --workspace demo run start",
     "lint": "npm --workspace demo run lint"
   },

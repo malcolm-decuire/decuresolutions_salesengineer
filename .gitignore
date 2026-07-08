@@ -14,6 +14,7 @@ yarn-error.log*
 .vscode/
 
 # workspace app build output
+/.next/
 demo/.next/
 demo/.vercel/
 demo/next-env.d.ts
