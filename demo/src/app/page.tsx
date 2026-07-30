@@ -776,11 +776,11 @@ export default function Page() {
         }
         cta={
           <div className="flex items-center gap-4">
-            <ButtonLink href="#" size="lg">
+            <ButtonLink href="https://calendly.com/malcolm-decuire/15min" size="lg">
               Calendly
             </ButtonLink>
 
-            <PlainButtonLink href="#" size="lg">
+            <PlainButtonLink href="https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/" size="lg">
               AI Experiments <ArrowNarrowRightIcon />
             </PlainButtonLink>
           </div>
@@ -790,7 +790,7 @@ export default function Page() {
       <SeStatsCard
         id="stats"
         className="scroll-mt-24"
-        eyebrow="My track record"
+        eyebrow="Track Record"
         headline="Trusted by Sales Leaders"
         description={
           <p>
