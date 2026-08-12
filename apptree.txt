@@ -1,0 +1,462 @@
+.
+├── CHANGELOG.md
+├── LICENSE.md
+├── README.md
+├── apptree.txt
+├── cheatsheet.md
+├── components
+│   ├── elements
+│   │   ├── announcement-badge.tsx
+│   │   ├── button.tsx
+│   │   ├── container.tsx
+│   │   ├── document.tsx
+│   │   ├── email-signup-form.tsx
+│   │   ├── eyebrow.tsx
+│   │   ├── heading.tsx
+│   │   ├── install-command.tsx
+│   │   ├── link.tsx
+│   │   ├── logo-grid.tsx
+│   │   ├── main.tsx
+│   │   ├── screenshot.tsx
+│   │   ├── section.tsx
+│   │   ├── subheading.tsx
+│   │   ├── text.tsx
+│   │   └── wallpaper.tsx
+│   ├── icons
+│   │   ├── alert-triangle-icon.tsx
+│   │   ├── archive-box-icon.tsx
+│   │   ├── archive-box-x-icon.tsx
+│   │   ├── arrow-down-arrow-up-icon.tsx
+│   │   ├── arrow-left-arrow-right-icon.tsx
+│   │   ├── arrow-narrow-down-icon.tsx
+│   │   ├── arrow-narrow-left-icon.tsx
+│   │   ├── arrow-narrow-right-icon.tsx
+│   │   ├── arrow-narrow-up-icon.tsx
+│   │   ├── at-symbol-icon.tsx
+│   │   ├── banknotes-icon.tsx
+│   │   ├── beaker-icon.tsx
+│   │   ├── bell-icon.tsx
+│   │   ├── book-open-icon.tsx
+│   │   ├── briefcase-icon.tsx
+│   │   ├── building-2-icon.tsx
+│   │   ├── building-icon.tsx
+│   │   ├── building-library-icon.tsx
+│   │   ├── building-storefront-icon.tsx
+│   │   ├── calendar-icon.tsx
+│   │   ├── camera-icon.tsx
+│   │   ├── camera-video-icon.tsx
+│   │   ├── chart-bar-icon.tsx
+│   │   ├── chart-line-icon.tsx
+│   │   ├── chart-pie-circle-icon.tsx
+│   │   ├── chat-bubble-circle-ellipsis-icon.tsx
+│   │   ├── chat-bubble-circle-icon.tsx
+│   │   ├── chat-bubble-circle-stacked-icon.tsx
+│   │   ├── chat-bubble-rectangle-ellipsis-icon.tsx
+│   │   ├── chat-bubble-rectangle-icon.tsx
+│   │   ├── checkmark-icon.tsx
+│   │   ├── chevron-icon.tsx
+│   │   ├── clipboard-icon.tsx
+│   │   ├── clock-icon.tsx
+│   │   ├── cloud-arrow-down-icon.tsx
+│   │   ├── cloud-arrow-up-icon.tsx
+│   │   ├── cloud-icon.tsx
+│   │   ├── code-square-icon.tsx
+│   │   ├── cog-icon.tsx
+│   │   ├── compass-icon.tsx
+│   │   ├── cpu-icon.tsx
+│   │   ├── document-2-stacked-icon.tsx
+│   │   ├── document-icon.tsx
+│   │   ├── education-cap-icon.tsx
+│   │   ├── filter-icon.tsx
+│   │   ├── fingerprint-icon.tsx
+│   │   ├── flag-icon.tsx
+│   │   ├── folder-arrow-left-icon.tsx
+│   │   ├── folder-arrow-right-icon.tsx
+│   │   ├── folder-icon.tsx
+│   │   ├── folder-minus-icon.tsx
+│   │   ├── folder-plus-icon.tsx
+│   │   ├── git-branch-icon.tsx
+│   │   ├── git-diff-icon.tsx
+│   │   ├── git-merge-icon.tsx
+│   │   ├── git-pull-icon.tsx
+│   │   ├── hard-drive-icon.tsx
+│   │   ├── heart-icon.tsx
+│   │   ├── heart-pulse-icon.tsx
+│   │   ├── home-icon.tsx
+│   │   ├── inbox-icon.tsx
+│   │   ├── information-circle-icon.tsx
+│   │   ├── key-icon.tsx
+│   │   ├── language-icon.tsx
+│   │   ├── lifebuoy-icon.tsx
+│   │   ├── light-bulb-icon.tsx
+│   │   ├── lighting-bolt-icon.tsx
+│   │   ├── lock-icon.tsx
+│   │   ├── lock-open-icon.tsx
+│   │   ├── magnifying-glass-icon.tsx
+│   │   ├── mail-icon.tsx
+│   │   ├── map-icon.tsx
+│   │   ├── map-pin-icon.tsx
+│   │   ├── microphone-icon.tsx
+│   │   ├── minus-circle-icon.tsx
+│   │   ├── minus-icon.tsx
+│   │   ├── moon-icon.tsx
+│   │   ├── newspaper-icon.tsx
+│   │   ├── paperclip-icon.tsx
+│   │   ├── pencil-on-square-icon.tsx
+│   │   ├── photo-icon.tsx
+│   │   ├── plus-circle-icon.tsx
+│   │   ├── plus-icon.tsx
+│   │   ├── question-circle-icon.tsx
+│   │   ├── repeat-icon.tsx
+│   │   ├── rocket-icon.tsx
+│   │   ├── shield-exclamation-icon.tsx
+│   │   ├── shopping-bag-icon.tsx
+│   │   ├── shopping-cart-icon.tsx
+│   │   ├── sliders-icon.tsx
+│   │   ├── social
+│   │   │   ├── facebook-icon.tsx
+│   │   │   ├── github-icon.tsx
+│   │   │   ├── instagram-icon.tsx
+│   │   │   ├── linkedin-icon.tsx
+│   │   │   ├── x-icon.tsx
+│   │   │   └── youtube-icon.tsx
+│   │   ├── sparkles-icon.tsx
+│   │   ├── square-3-stack-3d-icon.tsx
+│   │   ├── squares-2-stacked-icon.tsx
+│   │   ├── star-icon.tsx
+│   │   ├── sun-icon.tsx
+│   │   ├── tag-icon.tsx
+│   │   ├── target-icon.tsx
+│   │   ├── terminal-icon.tsx
+│   │   ├── ticket-icon.tsx
+│   │   ├── trash-icon.tsx
+│   │   ├── ui-layout-icon.tsx
+│   │   ├── unordered-list-icon.tsx
+│   │   ├── user-2-icon.tsx
+│   │   ├── user-arrow-left-icon.tsx
+│   │   ├── user-arrow-right-icon.tsx
+│   │   ├── user-circle-dotted-icon.tsx
+│   │   └── user-circle-icon.tsx
+│   └── sections
+│       ├── brands-cards-multi-column.tsx
+│       ├── call-to-action-simple-centered.tsx
+│       ├── call-to-action-simple.tsx
+│       ├── document-centered.tsx
+│       ├── document-left-aligned.tsx
+│       ├── faqs-accordion.tsx
+│       ├── faqs-two-column-accordion.tsx
+│       ├── features-stacked-alternating-with-demos.tsx
+│       ├── features-three-column-with-demos.tsx
+│       ├── features-three-column.tsx
+│       ├── features-two-column-with-demos.tsx
+│       ├── features-with-large-demo.tsx
+│       ├── footer-with-link-categories.tsx
+│       ├── footer-with-links-and-social-icons.tsx
+│       ├── footer-with-newsletter-form-categories-and-social-icons.tsx
+│       ├── hero-centered-with-demo.tsx
+│       ├── hero-centered-with-photo.tsx
+│       ├── hero-left-aligned-with-demo.tsx
+│       ├── hero-left-aligned-with-photo.tsx
+│       ├── hero-simple-centered.tsx
+│       ├── hero-simple-left-aligned.tsx
+│       ├── hero-two-column-with-photo.tsx
+│       ├── hero-with-demo-on-background.tsx
+│       ├── navbar-with-links-actions-and-centered-logo.tsx
+│       ├── navbar-with-logo-actions-and-centered-links.tsx
+│       ├── navbar-with-logo-actions-and-left-aligned-links.tsx
+│       ├── plan-comparison-table.tsx
+│       ├── pricing-hero-multi-tier.tsx
+│       ├── pricing-multi-tier.tsx
+│       ├── pricing-single-tier-two-column.tsx
+│       ├── se-casestudies.tsx
+│       ├── se-stats-card.tsx
+│       ├── se-timeline.tsx
+│       ├── stats-four-columns.tsx
+│       ├── stats-three-column-with-description.tsx
+│       ├── stats-with-graph.tsx
+│       ├── team-four-column-grid.tsx
+│       ├── team-three-column-grid.tsx
+│       ├── testimonial-two-column-with-large-photo.tsx
+│       ├── testimonial-with-large-quote.tsx
+│       └── testimonials-three-column-grid.tsx
+├── demo
+│   ├── LICENSE.md
+│   ├── eslint.config.mjs
+│   ├── next-env.d.ts
+│   ├── next.config.ts
+│   ├── package.json
+│   ├── postcss.config.mjs
+│   ├── public
+│   │   └── img
+│   │       ├── avatars
+│   │       │   ├── 1-h-1000-w-800.webp
+│   │       │   ├── 10-size-160.webp
+│   │       │   ├── 11-size-160.webp
+│   │       │   ├── 12-size-160.webp
+│   │       │   ├── 13-size-160.webp
+│   │       │   ├── 14-size-160.webp
+│   │       │   ├── 15-size-160.webp
+│   │       │   ├── 16-h-1000-w-1400.webp
+│   │       │   ├── 2-h-1000-w-800.webp
+│   │       │   ├── 3-h-1000-w-800.webp
+│   │       │   ├── 4-h-1000-w-800.webp
+│   │       │   ├── 5-h-1000-w-800.webp
+│   │       │   ├── 6-h-1000-w-800.webp
+│   │       │   ├── 7-h-1000-w-800.webp
+│   │       │   └── 8-h-1000-w-800.webp
+│   │       ├── logos
+│   │       │   ├── 10-color-black-height-32.svg
+│   │       │   ├── 10-color-white-height-32.svg
+│   │       │   ├── 11-color-black-height-32.svg
+│   │       │   ├── 11-color-white-height-32.svg
+│   │       │   ├── 12-color-black-height-32.svg
+│   │       │   ├── 12-color-white-height-32.svg
+│   │       │   ├── 13-color-black-height-32.svg
+│   │       │   ├── 13-color-white-height-32.svg
+│   │       │   ├── 8-color-black-height-32.svg
+│   │       │   ├── 8-color-white-height-32.svg
+│   │       │   ├── 9-color-black-height-32.svg
+│   │       │   ├── 9-color-white-height-32.svg
+│   │       │   ├── BCD-CARD.png
+│   │       │   ├── COPPERCRM-CARD.png
+│   │       │   ├── DECURESOLUTIONS-LOGO.png
+│   │       │   ├── GLADLY-CARD.png
+│   │       │   ├── HUSTLE-CARD.png
+│   │       │   ├── MIQ-CARD.png
+│   │       │   ├── PREQIN-CARD.png
+│   │       │   ├── SF-CARD.png
+│   │       │   ├── SNOWFLAKE-CARD.png
+│   │       │   ├── UPRIGHTED-CARD.png
+│   │       │   ├── WELLSFARGO-CARD.png
+│   │       │   ├── ZUORA-CARD.png
+│   │       │   ├── oatmeal-instrument-color-mauve-950.svg
+│   │       │   └── oatmeal-instrument-color-white.svg
+│   │       ├── photos
+│   │       │   └── 1.webp
+│   │       └── screenshots
+│   │           ├── 1-color-mauve-left-1000-top-800.webp
+│   │           ├── 1-color-mauve-left-1300-top-1300.webp
+│   │           ├── 1-color-mauve-left-1670-top-1408.webp
+│   │           ├── 1-color-mauve-left-1800-top-1250.webp
+│   │           ├── 1-color-mauve-left-1800-top-660.webp
+│   │           ├── 1-color-mauve-left-2000-top-1408.webp
+│   │           ├── 1-color-mauve-right-1000-top-800.webp
+│   │           ├── 1-color-mauve-right-1300-top-1300.webp
+│   │           ├── 1-color-mauve-right-1800-top-1250.webp
+│   │           ├── 1-color-mauve-right-1800-top-660.webp
+│   │           ├── 1-color-mauve.webp
+│   │           ├── 1-left-1000-top-800.webp
+│   │           ├── 1-left-1300-top-1300.webp
+│   │           ├── 1-left-1670-top-1408.webp
+│   │           ├── 1-left-1800-top-1250.webp
+│   │           ├── 1-left-1800-top-660.webp
+│   │           ├── 1-left-2000-top-1408.webp
+│   │           ├── 1-right-1000-top-800.webp
+│   │           ├── 1-right-1300-top-1300.webp
+│   │           ├── 1-right-1800-top-1250.webp
+│   │           ├── 1-right-1800-top-660.webp
+│   │           └── 1.webp
+│   ├── src
+│   │   ├── app
+│   │   │   ├── 404
+│   │   │   │   └── page.tsx
+│   │   │   ├── about
+│   │   │   │   └── page.tsx
+│   │   │   ├── favicon.ico
+│   │   │   ├── globals.css
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── pricing
+│   │   │   │   └── page.tsx
+│   │   │   └── privacy-policy
+│   │   │       └── page.tsx
+│   │   └── components
+│   │       ├── elements
+│   │       │   ├── announcement-badge.tsx
+│   │       │   ├── button.tsx
+│   │       │   ├── container.tsx
+│   │       │   ├── document.tsx
+│   │       │   ├── email-signup-form.tsx
+│   │       │   ├── eyebrow.tsx
+│   │       │   ├── heading.tsx
+│   │       │   ├── install-command.tsx
+│   │       │   ├── link.tsx
+│   │       │   ├── logo-grid.tsx
+│   │       │   ├── main.tsx
+│   │       │   ├── screenshot.tsx
+│   │       │   ├── section.tsx
+│   │       │   ├── subheading.tsx
+│   │       │   ├── text.tsx
+│   │       │   └── wallpaper.tsx
+│   │       ├── icons
+│   │       │   ├── alert-triangle-icon.tsx
+│   │       │   ├── archive-box-icon.tsx
+│   │       │   ├── archive-box-x-icon.tsx
+│   │       │   ├── arrow-down-arrow-up-icon.tsx
+│   │       │   ├── arrow-left-arrow-right-icon.tsx
+│   │       │   ├── arrow-narrow-down-icon.tsx
+│   │       │   ├── arrow-narrow-left-icon.tsx
+│   │       │   ├── arrow-narrow-right-icon.tsx
+│   │       │   ├── arrow-narrow-up-icon.tsx
+│   │       │   ├── at-symbol-icon.tsx
+│   │       │   ├── banknotes-icon.tsx
+│   │       │   ├── beaker-icon.tsx
+│   │       │   ├── bell-icon.tsx
+│   │       │   ├── book-open-icon.tsx
+│   │       │   ├── briefcase-icon.tsx
+│   │       │   ├── building-2-icon.tsx
+│   │       │   ├── building-icon.tsx
+│   │       │   ├── building-library-icon.tsx
+│   │       │   ├── building-storefront-icon.tsx
+│   │       │   ├── calendar-icon.tsx
+│   │       │   ├── camera-icon.tsx
+│   │       │   ├── camera-video-icon.tsx
+│   │       │   ├── chart-bar-icon.tsx
+│   │       │   ├── chart-line-icon.tsx
+│   │       │   ├── chart-pie-circle-icon.tsx
+│   │       │   ├── chat-bubble-circle-ellipsis-icon.tsx
+│   │       │   ├── chat-bubble-circle-icon.tsx
+│   │       │   ├── chat-bubble-circle-stacked-icon.tsx
+│   │       │   ├── chat-bubble-rectangle-ellipsis-icon.tsx
+│   │       │   ├── chat-bubble-rectangle-icon.tsx
+│   │       │   ├── checkmark-icon.tsx
+│   │       │   ├── chevron-icon.tsx
+│   │       │   ├── clipboard-icon.tsx
+│   │       │   ├── clock-icon.tsx
+│   │       │   ├── cloud-arrow-down-icon.tsx
+│   │       │   ├── cloud-arrow-up-icon.tsx
+│   │       │   ├── cloud-icon.tsx
+│   │       │   ├── code-square-icon.tsx
+│   │       │   ├── cog-icon.tsx
+│   │       │   ├── compass-icon.tsx
+│   │       │   ├── cpu-icon.tsx
+│   │       │   ├── document-2-stacked-icon.tsx
+│   │       │   ├── document-icon.tsx
+│   │       │   ├── education-cap-icon.tsx
+│   │       │   ├── filter-icon.tsx
+│   │       │   ├── fingerprint-icon.tsx
+│   │       │   ├── flag-icon.tsx
+│   │       │   ├── folder-arrow-left-icon.tsx
+│   │       │   ├── folder-arrow-right-icon.tsx
+│   │       │   ├── folder-icon.tsx
+│   │       │   ├── folder-minus-icon.tsx
+│   │       │   ├── folder-plus-icon.tsx
+│   │       │   ├── git-branch-icon.tsx
+│   │       │   ├── git-diff-icon.tsx
+│   │       │   ├── git-merge-icon.tsx
+│   │       │   ├── git-pull-icon.tsx
+│   │       │   ├── hard-drive-icon.tsx
+│   │       │   ├── heart-icon.tsx
+│   │       │   ├── heart-pulse-icon.tsx
+│   │       │   ├── home-icon.tsx
+│   │       │   ├── inbox-icon.tsx
+│   │       │   ├── information-circle-icon.tsx
+│   │       │   ├── key-icon.tsx
+│   │       │   ├── language-icon.tsx
+│   │       │   ├── lifebuoy-icon.tsx
+│   │       │   ├── light-bulb-icon.tsx
+│   │       │   ├── lighting-bolt-icon.tsx
+│   │       │   ├── lock-icon.tsx
+│   │       │   ├── lock-open-icon.tsx
+│   │       │   ├── magnifying-glass-icon.tsx
+│   │       │   ├── mail-icon.tsx
+│   │       │   ├── map-icon.tsx
+│   │       │   ├── map-pin-icon.tsx
+│   │       │   ├── microphone-icon.tsx
+│   │       │   ├── minus-circle-icon.tsx
+│   │       │   ├── minus-icon.tsx
+│   │       │   ├── moon-icon.tsx
+│   │       │   ├── newspaper-icon.tsx
+│   │       │   ├── paperclip-icon.tsx
+│   │       │   ├── pencil-on-square-icon.tsx
+│   │       │   ├── photo-icon.tsx
+│   │       │   ├── plus-circle-icon.tsx
+│   │       │   ├── plus-icon.tsx
+│   │       │   ├── question-circle-icon.tsx
+│   │       │   ├── repeat-icon.tsx
+│   │       │   ├── rocket-icon.tsx
+│   │       │   ├── shield-exclamation-icon.tsx
+│   │       │   ├── shopping-bag-icon.tsx
+│   │       │   ├── shopping-cart-icon.tsx
+│   │       │   ├── sliders-icon.tsx
+│   │       │   ├── social
+│   │       │   ├── sparkles-icon.tsx
+│   │       │   ├── square-3-stack-3d-icon.tsx
+│   │       │   ├── squares-2-stacked-icon.tsx
+│   │       │   ├── star-icon.tsx
+│   │       │   ├── sun-icon.tsx
+│   │       │   ├── tag-icon.tsx
+│   │       │   ├── target-icon.tsx
+│   │       │   ├── terminal-icon.tsx
+│   │       │   ├── ticket-icon.tsx
+│   │       │   ├── trash-icon.tsx
+│   │       │   ├── ui-layout-icon.tsx
+│   │       │   ├── unordered-list-icon.tsx
+│   │       │   ├── user-2-icon.tsx
+│   │       │   ├── user-arrow-left-icon.tsx
+│   │       │   ├── user-arrow-right-icon.tsx
+│   │       │   ├── user-circle-dotted-icon.tsx
+│   │       │   └── user-circle-icon.tsx
+│   │       └── sections
+│   │           ├── brands-cards-multi-column.tsx
+│   │           ├── call-to-action-simple-centered.tsx
+│   │           ├── call-to-action-simple.tsx
+│   │           ├── document-centered.tsx
+│   │           ├── document-left-aligned.tsx
+│   │           ├── faqs-accordion.tsx
+│   │           ├── faqs-two-column-accordion.tsx
+│   │           ├── features-stacked-alternating-with-demos.tsx
+│   │           ├── features-three-column-with-demos.tsx
+│   │           ├── features-three-column.tsx
+│   │           ├── features-two-column-with-demos.tsx
+│   │           ├── features-with-large-demo.tsx
+│   │           ├── footer-with-link-categories.tsx
+│   │           ├── footer-with-links-and-social-icons.tsx
+│   │           ├── footer-with-newsletter-form-categories-and-social-icons.tsx
+│   │           ├── hero-centered-with-demo.tsx
+│   │           ├── hero-centered-with-photo.tsx
+│   │           ├── hero-left-aligned-with-demo.tsx
+│   │           ├── hero-left-aligned-with-photo.tsx
+│   │           ├── hero-simple-centered.tsx
+│   │           ├── hero-simple-left-aligned.tsx
+│   │           ├── hero-two-column-with-photo.tsx
+│   │           ├── hero-with-demo-on-background.tsx
+│   │           ├── navbar-with-links-actions-and-centered-logo.tsx
+│   │           ├── navbar-with-logo-actions-and-centered-links.tsx
+│   │           ├── navbar-with-logo-actions-and-left-aligned-links.tsx
+│   │           ├── plan-comparison-table.tsx
+│   │           ├── pricing-hero-multi-tier.tsx
+│   │           ├── pricing-multi-tier.tsx
+│   │           ├── pricing-single-tier-two-column.tsx
+│   │           ├── se-casestudies.tsx
+│   │           ├── se-stats-card.tsx
+│   │           ├── se-timeline.tsx
+│   │           ├── stats-four-columns.tsx
+│   │           ├── stats-three-column-with-description.tsx
+│   │           ├── stats-with-graph.tsx
+│   │           ├── team-four-column-grid.tsx
+│   │           ├── team-three-column-grid.tsx
+│   │           ├── testimonial-two-column-with-large-photo.tsx
+│   │           ├── testimonial-with-large-quote.tsx
+│   │           └── testimonials-three-column-grid.tsx
+│   └── tsconfig.json
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── 404-01.tsx
+│   ├── 404-02.tsx
+│   ├── about-01.tsx
+│   ├── about-02.tsx
+│   ├── about-03.tsx
+│   ├── home-01.tsx
+│   ├── home-02.tsx
+│   ├── home-03.tsx
+│   ├── pricing-01.tsx
+│   ├── pricing-02.tsx
+│   ├── pricing-03.tsx
+│   ├── privacy-policy-01.tsx
+│   └── privacy-policy-02.tsx
+├── tailwind.css
+└── vercel.json
+
+25 directories, 435 files

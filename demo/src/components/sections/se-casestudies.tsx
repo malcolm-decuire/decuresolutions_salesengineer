@@ -5,6 +5,7 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import { useState, type ComponentProps, type ReactNode } from 'react'
 
+import { ButtonLink } from '../elements/button'
 import { TagIcon } from '../icons/tag-icon'
 import { Section } from '../elements/section'
 
@@ -48,11 +49,14 @@ export type SeCaseStudy = {
   company: string
   role: string
   location: string
+  status?: string
   industry: string
   impact_summary: string
   technologies: string[]
   category: 'professional' | 'volunteer'
   imageSrc?: string
+  actionLabel?: string
+  actionHref?: string
   case_study: {
     context: CaseStudyDetailSection
     problem: CaseStudyDetailProblem
@@ -137,7 +141,14 @@ function CaseStudyCard({ item }: { item: SeCaseStudy }) {
         </div>
 
         <div className="flex flex-col gap-2">
-          <p className="text-sm/6 text-mauve-700 dark:text-mauve-400">{item.location}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="text-sm/6 text-mauve-700 dark:text-mauve-400">{item.location}</p>
+            {item.status ? (
+              <span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-emerald-700 dark:bg-emerald-400/15 dark:text-emerald-300">
+                {item.status}
+              </span>
+            ) : null}
+          </div>
           <h3 className="text-xl font-semibold tracking-tight text-mauve-950 dark:text-white">{item.company}</h3>
           <p className="text-sm/6 font-medium text-mauve-600 dark:text-mauve-300">{item.role}</p>
         </div>
@@ -148,13 +159,23 @@ function CaseStudyCard({ item }: { item: SeCaseStudy }) {
           ))}
         </ul>
 
-        <button
-          type="button"
-          onClick={() => setIsOpen(true)}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-mauve-950/10 bg-mauve-950/[0.03] px-4 text-sm font-medium text-mauve-800 shadow-none transition hover:bg-mauve-950/5 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
-        >
-          <span>Case Study Details</span>
-        </button>
+        {item.actionHref ? (
+          <ButtonLink
+            href={item.actionHref}
+            size="lg"
+            className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full border border-mauve-950/10 bg-mauve-950/[0.03] px-4 text-sm font-medium text-mauve-800 shadow-none transition hover:bg-mauve-950/5 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+          >
+            <span>{item.actionLabel ?? 'Open Demo'}</span>
+          </ButtonLink>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-mauve-950/10 bg-mauve-950/[0.03] px-4 text-sm font-medium text-mauve-800 shadow-none transition hover:bg-mauve-950/5 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+          >
+            <span>Case Study Details</span>
+          </button>
+        )}
 
         <Dialog open={isOpen} onClose={setIsOpen} className="relative z-10">
           <DialogBackdrop

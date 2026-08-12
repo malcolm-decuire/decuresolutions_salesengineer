@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-import { AnnouncementBadge } from '@/components/elements/announcement-badge'
 import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
 import { HeroLeftAlignedWithDemo } from '@/components/sections/hero-left-aligned-with-demo'
@@ -31,150 +30,30 @@ const stats = [
   },
 ]
 
+const investmentStats = [
+  {
+    id: 1,
+    name: 'Commercial Real Estate Experience',
+    value: '$30M+',
+  },
+  {
+    id: 2,
+    name: 'Portfolio Due-Diligence Supported',
+    value: '$1B',
+  },
+  {
+    id: 3,
+    name: 'Investment Analysis Experience',
+    value: '+5 Years',
+  },
+  {
+    id: 4,
+    name: 'Real Estate Education Experience',
+    value: '+5 Years',
+  },
+]
+
 const caseStudies: SeCaseStudy[] = [
-  {
-    id: 11,
-    company: 'Gladly',
-    role: 'Enterprise Solutions Engineer',
-    location: 'Remote',
-    industry: 'SAAS-AI',
-    imageSrc: '/img/logos/GLADLY-CARD.png',
-    category: 'professional',
-    impact_summary:
-      'Built enterprise CX solution narratives around AI, automation, API connectivity, and customer support operations. Partnered with sales and technical stakeholders to shape custom demos, integration workflows, and business value cases for complex customer experience teams.',
-    technologies: [
-      'Customer Experience AI',
-      'Support Automation',
-      'REST APIs',
-      'Postman',
-      'JavaScript',
-      'Node.js',
-      'React',
-      'Python',
-      'Integrations',
-      'POCs',
-      'Solution Architecture',
-      'SME',
-    ],
-    case_study: {
-      context: {
-        product_service:
-          'Customer experience AI platform focused on support automation, continuous customer conversations, agent workflows, and enterprise CX operations.',
-        market_icp:
-          'Enterprise support, customer experience, and operations leaders evaluating AI, CCaaS, support automation, and API-enabled customer service platforms.',
-        deal_stage:
-          'Enterprise discovery, technical validation, custom demo, proof-of-concept, competitive evaluation, and post-sale handoff support.',
-      },
-      problem: {
-        buyer_struggles:
-          'Support leaders needed to reduce cost without creating a poor customer experience. Technical buyers needed confidence that AI workflows, support operations, and API integrations could fit into their existing stack.',
-        common_objections:
-          'Concerns included AI accuracy, implementation complexity, integration risk, incumbent platform displacement, support team adoption, and whether automation would improve loyalty instead of simply deflecting customers.',
-      },
-      strategy: {
-        positioning_decisions:
-          'Positioned the platform around customer devotion, not deflection — balancing cost savings with high-quality support experiences and operational scalability.',
-        messaging_angle:
-          'Translated technical capabilities into executive-level value: faster response times, better customer context, lower repetitive support volume, and cleaner handoffs between AI and human agents.',
-        channel_selection:
-          'Used AE-led discovery, technical workshops, custom demos, API walkthroughs, POC environments, and cross-functional implementation planning.',
-      },
-      execution: {
-        outreach_approach:
-          'Partnered with Account Executives to align technical discovery to business priorities across CX, operations, product, and technical stakeholders.',
-        demo_or_call_flow:
-          'Led demos around AI-assisted support workflows, customer conversation history, automation triggers, API connectivity, and operational reporting.',
-        follow_ups:
-          'Documented integration requirements, scoped POC next steps, clarified technical risks, and coordinated with Product, Engineering, and Implementation teams for clean handoffs.',
-      },
-      results: {
-        conversion_rate:
-          'Supported enterprise evaluation motion by improving technical confidence across CX, executive, and technical buyer groups.',
-        pipeline_created:
-          'Contributed to enterprise sales opportunities requiring AI, API, and customer experience transformation narratives.',
-        deals_closed:
-          'Supported deal strategy for high-value enterprise opportunities through technical validation, demo strategy, and solution design.',
-        time_to_close:
-          'Improved buyer clarity during complex evaluations by converting broad CX goals into scoped technical workflows and measurable business value.',
-      },
-      learnings: {
-        what_worked:
-          'The strongest narrative was not “AI replaces support,” but “AI improves support quality while reducing operational friction.”',
-        what_id_do_differently:
-          'Create more reusable demo templates by vertical, including retail, travel, marketplace, and high-volume support use cases.',
-      },
-    },
-  },
-
-  {
-    id: 10,
-    company: 'Uprighted',
-    role: 'Teaching Assistant',
-    location: 'Remote',
-    industry: 'Data Science',
-    imageSrc: '/img/logos/UPRIGHTED-CARD.png',
-    category: 'volunteer',
-    impact_summary:
-      'Supported technical learning and early-stage civic technology workflows by helping students and builders understand Python, SQL, APIs, and full-stack product concepts. Helped translate engineering concepts into practical implementation steps for non-traditional technical learners.',
-    technologies: [
-      'Python',
-      'SQL',
-      'APIs',
-      'Technical Instruction',
-      'Technical Mentorship',
-      'Curriculum Support',
-      'SME',
-    ],
-    case_study: {
-      context: {
-        product_service:
-          'Technical education and civic technology support focused on helping learners build practical software, API, and data skills.',
-        market_icp:
-          'Early-career developers, civic technology learners, and non-traditional technical students building confidence in software and data workflows.',
-        deal_stage:
-          'Instructional support, technical enablement, project troubleshooting, and learner onboarding.',
-      },
-      problem: {
-        buyer_struggles:
-          'Learners often understood high-level product goals but needed help translating concepts into working code, data models, and API-driven workflows.',
-        common_objections:
-          'Common blockers included fear of technical complexity, debugging frustration, unclear project structure, and difficulty connecting frontend, backend, and database concepts.',
-      },
-      strategy: {
-        positioning_decisions:
-          'Positioned technical learning around business outcomes and product use cases rather than abstract syntax alone.',
-        messaging_angle:
-          'Made technical concepts easier to understand by connecting Python, SQL, and APIs to real-world workflows like onboarding, engagement, and reporting.',
-        channel_selection:
-          'Used remote instruction, project reviews, office-hour support, and hands-on debugging sessions.',
-      },
-      execution: {
-        outreach_approach:
-          'Supported learners through direct technical guidance, project walkthroughs, and structured debugging conversations.',
-        demo_or_call_flow:
-          'Explained technical flows from user action to frontend component, API request, backend logic, database query, and response handling.',
-        follow_ups:
-          'Reinforced lessons with implementation steps, reusable explanations, and simplified examples learners could apply independently.',
-      },
-      results: {
-        conversion_rate:
-          'Improved learner confidence by breaking technical concepts into repeatable, product-oriented workflows.',
-        pipeline_created:
-          'Helped learners advance from concept-level understanding to working technical project execution.',
-        deals_closed:
-          'Contributed to stronger project completion and better technical fluency across student workstreams.',
-        time_to_close:
-          'Reduced time spent stuck on implementation issues by providing clear debugging paths and technical framing.',
-      },
-      learnings: {
-        what_worked:
-          'Students learned faster when technical concepts were tied to product outcomes and real-world use cases.',
-        what_id_do_differently:
-          'Create more reusable starter templates for common full-stack workflows, including API calls, SQL queries, and frontend state handling.',
-      },
-    },
-  },
-
   {
     id: 1,
     company: 'Snowflake',
@@ -252,7 +131,6 @@ const caseStudies: SeCaseStudy[] = [
       },
     },
   },
-
   {
     id: 2,
     company: 'MiQ',
@@ -330,76 +208,6 @@ const caseStudies: SeCaseStudy[] = [
       },
     },
   },
-
-  {
-    id: 9,
-    company: "San Francisco's Mayor's Office",
-    role: 'Civic Tech Volunteer',
-    location: 'Remote',
-    industry: 'Civic Technology',
-    imageSrc: '/img/logos/SF-CARD.png',
-    category: 'volunteer',
-    impact_summary:
-      'Delivered digital literacy and civic technology support for underserved communities and small businesses. Helped translate technical tools into practical workflows for community organizations, professional services firms, and local stakeholders.',
-    technologies: [
-      'Zoom',
-      'SquareSpace',
-      'GCP',
-      'Digital Literacy',
-      'Technical Instruction',
-      'Technical Mentorship',
-      'SME',
-    ],
-    case_study: {
-      context: {
-        product_service:
-          'Digital literacy, civic technology support, small business enablement, and practical technology education.',
-        market_icp:
-          'Underserved communities, small businesses, community organizations, and professional services firms needing accessible technical support.',
-        deal_stage:
-          'Community enablement, technical coaching, digital onboarding, and workflow support.',
-      },
-      problem: {
-        buyer_struggles:
-          'Community members and small businesses needed help adopting digital tools but often lacked technical confidence, process clarity, or affordable implementation support.',
-        common_objections:
-          'Concerns included time commitment, tool complexity, cost, unclear ROI, and fear of making mistakes with unfamiliar platforms.',
-      },
-      strategy: {
-        positioning_decisions:
-          'Positioned technology as a practical operating tool rather than an intimidating technical system.',
-        messaging_angle:
-          'Focused on accessibility, confidence, and immediate use cases such as online presence, communication, workflow organization, and customer engagement.',
-        channel_selection:
-          'Used remote sessions, digital literacy workshops, community-based support, and one-on-one technical mentorship.',
-      },
-      execution: {
-        outreach_approach:
-          'Worked with local stakeholders and community programs to identify technical enablement needs.',
-        demo_or_call_flow:
-          'Walked users through simple digital workflows, including website tools, online communication, and business technology basics.',
-        follow_ups:
-          'Provided practical next steps and simplified tool recommendations that users could continue applying after sessions.',
-      },
-      results: {
-        conversion_rate:
-          'Improved digital confidence among community members and small business operators.',
-        pipeline_created:
-          'Supported civic technology and small business enablement efforts through practical technical education.',
-        deals_closed:
-          'Helped community stakeholders move from low technical confidence to usable digital workflows.',
-        time_to_close:
-          'Reduced friction in technology adoption by simplifying tools into clear, step-by-step workflows.',
-      },
-      learnings: {
-        what_worked:
-          'Technical education works best when it starts with the user’s immediate business or community need.',
-        what_id_do_differently:
-          'Create reusable workshop materials and templates to scale support across more community groups.',
-      },
-    },
-  },
-
   {
     id: 3,
     company: 'Blue Clover Devices',
@@ -474,7 +282,6 @@ const caseStudies: SeCaseStudy[] = [
       },
     },
   },
-
   {
     id: 4,
     company: 'Hustle',
@@ -547,7 +354,6 @@ const caseStudies: SeCaseStudy[] = [
       },
     },
   },
-
   {
     id: 5,
     company: 'Zuora',
@@ -620,7 +426,6 @@ const caseStudies: SeCaseStudy[] = [
       },
     },
   },
-
   {
     id: 6,
     company: 'Copper CRM',
@@ -691,7 +496,6 @@ const caseStudies: SeCaseStudy[] = [
       },
     },
   },
-
   {
     id: 8,
     company: 'Wells Fargo',
@@ -761,6 +565,237 @@ const caseStudies: SeCaseStudy[] = [
       },
     },
   },
+  {
+    id: 10,
+    company: 'Upright',
+    role: 'Teaching Assistant',
+    location: 'Remote',
+    industry: 'Data Science',
+    imageSrc: '/img/logos/UPRIGHTED-CARD.png',
+    category: 'volunteer',
+    impact_summary:
+      'Supported technical learning and early-stage civic technology workflows by helping students and builders understand Python, SQL, APIs, and full-stack product concepts. Helped translate engineering concepts into practical implementation steps for non-traditional technical learners.',
+    technologies: [
+      'Python',
+      'SQL',
+      'APIs',
+      'Technical Instruction',
+      'Technical Mentorship',
+      'Curriculum Support',
+      'SME',
+    ],
+    case_study: {
+      context: {
+        product_service:
+          'Technical education and civic technology support focused on helping learners build practical software, API, and data skills.',
+        market_icp:
+          'Early-career developers, civic technology learners, and non-traditional technical students building confidence in software and data workflows.',
+        deal_stage:
+          'Instructional support, technical enablement, project troubleshooting, and learner onboarding.',
+      },
+      problem: {
+        buyer_struggles:
+          'Learners often understood high-level product goals but needed help translating concepts into working code, data models, and API-driven workflows.',
+        common_objections:
+          'Common blockers included fear of technical complexity, debugging frustration, unclear project structure, and difficulty connecting frontend, backend, and database concepts.',
+      },
+      strategy: {
+        positioning_decisions:
+          'Positioned technical learning around business outcomes and product use cases rather than abstract syntax alone.',
+        messaging_angle:
+          'Made technical concepts easier to understand by connecting Python, SQL, and APIs to real-world workflows like onboarding, engagement, and reporting.',
+        channel_selection:
+          'Used remote instruction, project reviews, office-hour support, and hands-on debugging sessions.',
+      },
+      execution: {
+        outreach_approach:
+          'Supported learners through direct technical guidance, project walkthroughs, and structured debugging conversations.',
+        demo_or_call_flow:
+          'Explained technical flows from user action to frontend component, API request, backend logic, database query, and response handling.',
+        follow_ups:
+          'Reinforced lessons with implementation steps, reusable explanations, and simplified examples learners could apply independently.',
+      },
+      results: {
+        conversion_rate:
+          'Improved learner confidence by breaking technical concepts into repeatable, product-oriented workflows.',
+        pipeline_created:
+          'Helped learners advance from concept-level understanding to working technical project execution.',
+        deals_closed:
+          'Contributed to stronger project completion and better technical fluency across student workstreams.',
+        time_to_close:
+          'Reduced time spent stuck on implementation issues by providing clear debugging paths and technical framing.',
+      },
+      learnings: {
+        what_worked:
+          'Students learned faster when technical concepts were tied to product outcomes and real-world use cases.',
+        what_id_do_differently:
+          'Create more reusable starter templates for common full-stack workflows, including API calls, SQL queries, and frontend state handling.',
+      },
+    },
+  },
+  {
+    id: 9,
+    company: 'San Francisco Mayors Office',
+    role: 'Civic Tech Volunteer',
+    location: 'Remote',
+    industry: 'Civic Technology',
+    imageSrc: '/img/logos/SF-CARD.png',
+    category: 'volunteer',
+    impact_summary:
+      'Delivered digital literacy and civic technology support for underserved communities and small businesses. Helped translate technical tools into practical workflows for community organizations, professional services firms, and local stakeholders.',
+    technologies: [
+      'Zoom',
+      'SquareSpace',
+      'GCP',
+      'Digital Literacy',
+      'Technical Instruction',
+      'Technical Mentorship',
+      'SME',
+    ],
+    case_study: {
+      context: {
+        product_service:
+          'Digital literacy, civic technology support, small business enablement, and practical technology education.',
+        market_icp:
+          'Underserved communities, small businesses, community organizations, and professional services firms needing accessible technical support.',
+        deal_stage:
+          'Community enablement, technical coaching, digital onboarding, and workflow support.',
+      },
+      problem: {
+        buyer_struggles:
+          'Community members and small businesses needed help adopting digital tools but often lacked technical confidence, process clarity, or affordable implementation support.',
+        common_objections:
+          'Concerns included time commitment, tool complexity, cost, unclear ROI, and fear of making mistakes with unfamiliar platforms.',
+      },
+      strategy: {
+        positioning_decisions:
+          'Positioned technology as a practical operating tool rather than an intimidating technical system.',
+        messaging_angle:
+          'Focused on accessibility, confidence, and immediate use cases such as online presence, communication, workflow organization, and customer engagement.',
+        channel_selection:
+          'Used remote sessions, digital literacy workshops, community-based support, and one-on-one technical mentorship.',
+      },
+      execution: {
+        outreach_approach:
+          'Worked with local stakeholders and community programs to identify technical enablement needs.',
+        demo_or_call_flow:
+          'Walked users through simple digital workflows, including website tools, online communication, and business technology basics.',
+        follow_ups:
+          'Provided practical next steps and simplified tool recommendations that users could continue applying after sessions.',
+      },
+      results: {
+        conversion_rate:
+          'Improved digital confidence among community members and small business operators.',
+        pipeline_created:
+          'Supported civic technology and small business enablement efforts through practical technical education.',
+        deals_closed:
+          'Helped community stakeholders move from low technical confidence to usable digital workflows.',
+        time_to_close:
+          'Reduced friction in technology adoption by simplifying tools into clear, step-by-step workflows.',
+      },
+      learnings: {
+        what_worked:
+          'Technical education works best when it starts with the user’s immediate business or community need.',
+        what_id_do_differently:
+          'Create reusable workshop materials and templates to scale support across more community groups.',
+      },
+    },
+  },
+]
+
+const professionalCaseStudies = caseStudies.filter(({ category }) => category === 'professional')
+
+const communityCaseStudies = caseStudies.filter(({ category }) => category === 'volunteer')
+
+function createPlaceholderCaseStudy(id: string, company: string): SeCaseStudy {
+  return {
+    id,
+    company,
+    role: 'Placeholder',
+    location: 'Online',
+    industry: 'Asset Management',
+    category: 'professional',
+    impact_summary:
+      'Placeholder case study content for upcoming asset management experience. Replace with a specific client, deal, or workflow example.',
+    technologies: ['Placeholder'],
+    case_study: {
+      context: {
+        product_service: 'Placeholder asset management workflow.',
+        market_icp: 'Placeholder audience for future asset management expertise.',
+        deal_stage: 'Placeholder stage.',
+      },
+      problem: {
+        buyer_struggles: 'Placeholder problem statement for asset management work.',
+        common_objections: 'Placeholder objections for asset management work.',
+      },
+      strategy: {
+        positioning_decisions: 'Placeholder positioning decision.',
+        messaging_angle: 'Placeholder messaging angle.',
+        channel_selection: 'Placeholder channel selection.',
+      },
+      execution: {
+        outreach_approach: 'Placeholder outreach approach.',
+        demo_or_call_flow: 'Placeholder demo or call flow.',
+        follow_ups: 'Placeholder follow-up plan.',
+      },
+      results: {
+        conversion_rate: 'Placeholder result.',
+        pipeline_created: 'Placeholder pipeline.',
+        deals_closed: 'Placeholder deal outcome.',
+        time_to_close: 'Placeholder timing result.',
+      },
+      learnings: {
+        what_worked: 'Placeholder learning.',
+        what_id_do_differently: 'Placeholder improvement note.',
+      },
+    },
+  }
+}
+
+const assetManagementExpertise = [
+  {
+    ...createPlaceholderCaseStudy('asset-management-placeholder-1', 'Agentic RE Demo'),
+    company: 'AI RE Demo',
+    role: 'Interactive demo',
+    location: 'Demo Status',
+    status: 'Active',
+    industry: 'Asset Management',
+    imageSrc: '/img/logos/AI%20RE%20DEMO-CARD.png',
+    impact_summary:
+      'Interactive real estate demo focused on agentic workflows, portfolio exploration, and decision support for asset management teams.',
+    technologies: ['Agentic AI', 'Asset Management', 'Real Estate', 'Automation'],
+    actionLabel: 'Open Agentic RE Demo',
+    actionHref: 'https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/aidemo',
+  },
+  {
+    ...createPlaceholderCaseStudy('asset-management-placeholder-2', 'Investment Property Calculator'),
+    company: 'Direct RE Demo',
+    role: 'Interactive demo',
+    location: 'Demo Status',
+    status: 'Active',
+    industry: 'Asset Management',
+    imageSrc: '/img/logos/DIRECT%20RE%20DEMO-CARD.png',
+    impact_summary:
+      'Investment property calculator demo for quickly evaluating assumptions, returns, and acquisition scenarios.',
+    technologies: ['Financial Modeling', 'Returns', 'Underwriting', 'Real Estate'],
+    actionLabel: 'Open Investment Property Calculator',
+    actionHref:
+      'https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/portfolio/investment-calculator',
+  },
+  {
+    ...createPlaceholderCaseStudy('asset-management-placeholder-3', 'Real Estate API Demo'),
+    company: 'Supabase Demo',
+    role: 'Interactive demo',
+    location: 'Demo Status',
+    status: 'Active',
+    industry: 'Asset Management',
+    imageSrc: '/img/logos/SUPABASE%20DEMO-CARD.png',
+    impact_summary:
+      'Real estate API demo showing how property data can be accessed and used in productized asset management workflows.',
+    technologies: ['APIs', 'Real Estate Data', 'Workflow Automation', 'Integrations'],
+    actionLabel: 'Open Real Estate API Demo',
+    actionHref: 'https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/propnetdemo',
+  },
 ]
 
 export default function Page() {
@@ -770,9 +805,17 @@ export default function Page() {
         id="hero"
         headline="GTM Fanatic"
         subheadline={
-          <p>
-           A passionate problem-solver with a proven track record of driving complex technical sales for Fortune 500 clients.
-          </p>
+          <>
+            <p>
+              A passionate problem-solver with a proven track record of driving complex technical sales for Fortune 500
+              clients.
+            </p>
+
+            <p>
+              I&apos;m also an experienced real estate professional with a focus on real estate financial analysis,
+              real estate software, and REIT investments.
+            </p>
+          </>
         }
         cta={
           <div className="flex items-center gap-4">
@@ -781,7 +824,7 @@ export default function Page() {
             </ButtonLink>
 
             <PlainButtonLink href="https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/" size="lg">
-              AI Experiments <ArrowNarrowRightIcon />
+              AI DEMOS <ArrowNarrowRightIcon />
             </PlainButtonLink>
           </div>
         }
@@ -793,9 +836,17 @@ export default function Page() {
         eyebrow="Track Record"
         headline="Trusted by Sales Leaders"
         description={
-          <p>
-            I translate complex technical products into enterprise-ready demos, proof-of-concepts, and revenue-driving solutions for AI, data, and SaaS teams
-          </p>
+          <>
+            <p>
+              I translate complex technical products into enterprise-ready demos, proof-of-concepts, and
+              revenue-driving solutions for AI, data, and SaaS teams.
+            </p>
+
+            <p>
+              I also bring a real estate lens to the table, bridging financial analysis, underwriting, and product
+              thinking for investment-focused teams.
+            </p>
+          </>
         }
         imageSrc="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80"
         imageAlt=""
@@ -805,9 +856,41 @@ export default function Page() {
       <SeCaseStudies
         id="case-studies"
         className="scroll-mt-24"
-        headline="Case studies"
-        subheadline="A focused snapshot of the work, revenue, and systems I’ve helped build across professional and volunteer roles."
-        items={caseStudies}
+        headline="Case Studies: GTM"
+        subheadline="A focused snapshot of the work, revenue, and systems I’ve helped build across professional roles."
+        items={professionalCaseStudies}
+      />
+
+      <SeCaseStudies
+        id="community-case-studies"
+        className="scroll-mt-24"
+        headline="Case Studies: Civic Duty"
+        subheadline="Volunteer and civic technology work focused on practical support, technical enablement, and community impact."
+        items={communityCaseStudies}
+      />
+
+      <SeStatsCard
+        id="investment-stats"
+        className="scroll-mt-24"
+        eyebrow="Investment Track Record"
+        headline="Investment Stats Card"
+        description={
+          <p>
+            I bring structured underwriting, portfolio analysis, and commercial real estate diligence experience that
+            helps asset management teams make faster, clearer investment decisions.
+          </p>
+        }
+        imageSrc="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=2850&q=80"
+        imageAlt="Modern city skyline for investment and real estate context"
+        stats={investmentStats}
+      />
+
+      <SeCaseStudies
+        id="asset-management-expertise"
+        className="scroll-mt-24"
+        headline="Case Studies: Investment Expertise"
+        subheadline="Interactive demos and workflows for asset management, underwriting, and real estate analysis."
+        items={assetManagementExpertise}
       />
 
       <TestimonialThreeColumnGrid
