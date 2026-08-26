@@ -20,6 +20,10 @@ demo/.vercel/
 demo/next-env.d.ts
 demo/*.tsbuildinfo
 
+# Fund-model source workbook and regenerated golden outputs
+model/*.xlsx
+model_artifacts/golden/
+
 # unused template/source noise not needed for deployment
 /components/
 /pages/

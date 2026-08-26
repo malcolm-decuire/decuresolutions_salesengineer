@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { ButtonLink, PlainButtonLink } from '@/components/elements/button'
 import { ArrowNarrowRightIcon } from '@/components/icons/arrow-narrow-right-icon'
 import { HeroLeftAlignedWithDemo } from '@/components/sections/hero-left-aligned-with-demo'
-import { SeCaseStudies, type SeCaseStudy } from '../components/sections/se-casestudies'
+import { SeCaseStudies, type SeCaseStudy } from '@/components/sections/se-casestudies'
 import { SeStatsCard } from '@/components/sections/se-stats-card'
 import { Testimonial, TestimonialThreeColumnGrid } from '@/components/sections/testimonials-three-column-grid'
 
@@ -764,7 +764,7 @@ const assetManagementExpertise = [
     impact_summary:
       'Interactive real estate demo focused on agentic workflows, portfolio exploration, and decision support for asset management teams.',
     technologies: ['Agentic AI', 'Asset Management', 'Real Estate', 'Automation'],
-    actionLabel: 'Open Agentic RE Demo',
+    actionLabel: 'Demo',
     actionHref: 'https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/aidemo',
   },
   {
@@ -778,7 +778,7 @@ const assetManagementExpertise = [
     impact_summary:
       'Investment property calculator demo for quickly evaluating assumptions, returns, and acquisition scenarios.',
     technologies: ['Financial Modeling', 'Returns', 'Underwriting', 'Real Estate'],
-    actionLabel: 'Open Investment Property Calculator',
+    actionLabel: 'Demo',
     actionHref:
       'https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/portfolio/investment-calculator',
   },
@@ -793,8 +793,33 @@ const assetManagementExpertise = [
     impact_summary:
       'Real estate API demo showing how property data can be accessed and used in productized asset management workflows.',
     technologies: ['APIs', 'Real Estate Data', 'Workflow Automation', 'Integrations'],
-    actionLabel: 'Open Real Estate API Demo',
+    actionLabel: 'Demo',
     actionHref: 'https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/propnetdemo',
+  },
+  {
+    ...createPlaceholderCaseStudy('investment-fund-model', 'Investment Fund Model'),
+    company: 'Investment Fund Model',
+    role: 'Institutional fund modeling application',
+    location: 'Model Status',
+    status: 'In Development',
+    industry: 'Real Estate Private Equity',
+    imageSrc: '/img/logos/INVESTMENT%20DEMO-CARD.png',
+    impact_summary:
+      'Enterprise-grade digital replica of the real estate investment fund workbook. Guides users from fund assumptions through validated calculations, annual and monthly schedules, investment outputs, charts, and audit checks.',
+    technologies: ['TypeScript', 'Next.js', 'Financial Modeling', 'Vercel'],
+    actionLabel: 'Demo',
+    actionHref: '/fund-model',
+    actionDisclaimer: {
+      title: 'Investment Fund Model preview',
+      description:
+        'This Vercel release is an early-access preview of the workbook-to-web conversion. It is available now so stakeholders can review the experience while formula coverage and release verification continue.',
+      expectations: [
+        'Seven source controls currently support trusted recalculation; the remaining controls stay locked where workbook circularity has not yet been independently resolved.',
+        'Outputs are for product review and testing only. Do not use this preview for investment, underwriting, tax, legal, or capital-allocation decisions.',
+        'The completed release requires all 169 controls, workbook parity, XLSX round-trip verification, and mobile and desktop acceptance evidence.',
+      ],
+      confirmLabel: 'I understand — open preview',
+    },
   },
 ]
 

@@ -8,7 +8,13 @@
     "dev": "npm --workspace demo run dev",
     "build": "npm --workspace demo run build && rm -rf .next && cp -R demo/.next .next",
     "start": "npm --workspace demo run start",
-    "lint": "npm --workspace demo run lint"
+    "lint": "npm --workspace demo run lint",
+    "test": "npm --workspace demo run test",
+    "extract:model": "node scripts/extract-workbook-contract.mjs",
+    "audit:model-cache": "node scripts/audit-cached-oracle-coherence.mjs",
+    "compile:model-snapshot": "node scripts/compile-source-snapshot.mjs",
+    "compile:model-seed": "node scripts/compile-workbook-seed.mjs",
+    "compile:model-regions": "node scripts/compile-formula-regions.mjs"
   },
   "dependencies": {
     "@heroui/react": "^3.2.2",

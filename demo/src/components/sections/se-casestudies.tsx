@@ -57,6 +57,12 @@ export type SeCaseStudy = {
   imageSrc?: string
   actionLabel?: string
   actionHref?: string
+  actionDisclaimer?: {
+    title: string
+    description: string
+    expectations: string[]
+    confirmLabel?: string
+  }
   case_study: {
     context: CaseStudyDetailSection
     problem: CaseStudyDetailProblem
@@ -85,6 +91,7 @@ function getInitials(name: string) {
 
 function CaseStudyCard({ item }: { item: SeCaseStudy }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false)
   const [openTags, setOpenTags] = useState(false)
 
   function renderItem(label: string, value: string) {
@@ -159,13 +166,21 @@ function CaseStudyCard({ item }: { item: SeCaseStudy }) {
           ))}
         </ul>
 
-        {item.actionHref ? (
+        {item.actionHref && item.actionDisclaimer ? (
+          <button
+            type="button"
+            onClick={() => setIsDisclaimerOpen(true)}
+            className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full border border-mauve-950/10 bg-mauve-950/[0.03] px-4 text-sm font-medium text-mauve-800 shadow-none transition hover:bg-mauve-950/5 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
+          >
+            <span>{item.actionLabel ?? 'Demo'}</span>
+          </button>
+        ) : item.actionHref ? (
           <ButtonLink
             href={item.actionHref}
             size="lg"
             className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full border border-mauve-950/10 bg-mauve-950/[0.03] px-4 text-sm font-medium text-mauve-800 shadow-none transition hover:bg-mauve-950/5 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10"
           >
-            <span>{item.actionLabel ?? 'Open Demo'}</span>
+            <span>{item.actionLabel ?? 'Demo'}</span>
           </ButtonLink>
         ) : (
           <button
@@ -176,6 +191,65 @@ function CaseStudyCard({ item }: { item: SeCaseStudy }) {
             <span>Case Study Details</span>
           </button>
         )}
+
+        {item.actionHref && item.actionDisclaimer ? (
+          <Dialog open={isDisclaimerOpen} onClose={setIsDisclaimerOpen} className="relative z-50">
+            <DialogBackdrop
+              transition
+              className="fixed inset-0 bg-[#17232b]/70 backdrop-blur-sm transition-opacity data-closed:opacity-0"
+            />
+            <div className="fixed inset-0 z-50 w-screen overflow-y-auto p-4">
+              <div className="flex min-h-full items-end justify-center sm:items-center">
+                <DialogPanel
+                  transition
+                  className="w-full max-w-lg transform overflow-hidden rounded-3xl bg-white p-5 text-left shadow-2xl transition data-closed:translate-y-4 data-closed:opacity-0 sm:p-7 dark:bg-mauve-950"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <span className="inline-flex rounded-full bg-amber-100 px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-amber-800">
+                        Preview release
+                      </span>
+                      <DialogTitle as="h3" className="mt-4 text-2xl font-semibold tracking-tight text-mauve-950 dark:text-white">
+                        {item.actionDisclaimer.title}
+                      </DialogTitle>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setIsDisclaimerOpen(false)}
+                      className="grid size-11 shrink-0 place-items-center rounded-full border border-mauve-950/10 text-mauve-600 hover:bg-mauve-950/5 dark:border-white/10 dark:text-white"
+                    >
+                      <span className="sr-only">Close disclaimer</span>
+                      <XMarkIcon aria-hidden="true" className="size-5" />
+                    </button>
+                  </div>
+
+                  <p className="mt-4 text-sm/6 text-mauve-600 dark:text-mauve-300">{item.actionDisclaimer.description}</p>
+                  <ul className="mt-5 space-y-3">
+                    {item.actionDisclaimer.expectations.map((expectation) => (
+                      <li key={expectation} className="flex gap-3 rounded-2xl bg-mauve-950/[0.04] p-3 text-sm/6 text-mauve-700 dark:bg-white/[0.06] dark:text-mauve-200">
+                        <span aria-hidden="true" className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-amber-100 text-xs font-bold text-amber-800">!</span>
+                        <span>{expectation}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                    <button
+                      type="button"
+                      onClick={() => setIsDisclaimerOpen(false)}
+                      className="min-h-12 rounded-full border border-mauve-950/10 px-5 text-sm font-semibold text-mauve-700 hover:bg-mauve-950/5 dark:border-white/10 dark:text-white"
+                    >
+                      Return to portfolio
+                    </button>
+                    <ButtonLink href={item.actionHref} size="lg" className="min-h-12 px-5 text-center">
+                      {item.actionDisclaimer.confirmLabel ?? 'Continue to preview'}
+                    </ButtonLink>
+                  </div>
+                </DialogPanel>
+              </div>
+            </div>
+          </Dialog>
+        ) : null}
 
         <Dialog open={isOpen} onClose={setIsOpen} className="relative z-10">
           <DialogBackdrop
