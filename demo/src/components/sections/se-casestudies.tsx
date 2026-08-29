@@ -241,9 +241,13 @@ function CaseStudyCard({ item }: { item: SeCaseStudy }) {
                     >
                       Return to portfolio
                     </button>
-                    <ButtonLink href={item.actionHref} size="lg" className="min-h-12 px-5 text-center">
+                    <a
+                      href={item.actionHref}
+                      onClick={() => setIsDisclaimerOpen(false)}
+                      className="inline-flex min-h-12 shrink-0 items-center justify-center gap-1 rounded-full bg-mauve-950 px-5 text-center text-sm/7 font-medium text-white hover:bg-mauve-800 dark:bg-mauve-300 dark:text-mauve-950 dark:hover:bg-mauve-200"
+                    >
                       {item.actionDisclaimer.confirmLabel ?? 'Continue to preview'}
-                    </ButtonLink>
+                    </a>
                   </div>
                 </DialogPanel>
               </div>

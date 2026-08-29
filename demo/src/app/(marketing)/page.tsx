@@ -810,13 +810,15 @@ const assetManagementExpertise = [
     actionLabel: 'Demo',
     actionHref: '/fund-model',
     actionDisclaimer: {
-      title: 'Investment Fund Model preview',
+      title: 'Before you use the Investment Fund Model',
       description:
-        'This Vercel release is an early-access preview of the workbook-to-web conversion. It is available now so stakeholders can review the experience while formula coverage and release verification continue.',
+        'This preview is a controlled web replica of the source Excel workbook. It preserves the workbook structure and guides you through assumptions, validation, calculation, results, charts, and cell-level audit views—but it is not yet an approved production underwriting system.',
       expectations: [
-        'Seven source controls currently support trusted recalculation; the remaining controls stay locked where workbook circularity has not yet been independently resolved.',
-        'Outputs are for product review and testing only. Do not use this preview for investment, underwriting, tax, legal, or capital-allocation decisions.',
-        'The completed release requires all 169 controls, workbook parity, XLSX round-trip verification, and mobile and desktop acceptance evidence.',
+        'How it works: enter an available source assumption, validate the inputs, then run the full model. Results and charts remain locked or stale until calculation finishes and every critical check passes.',
+        'Coverage today: the exact default workbook snapshot is available and seven source controls support trusted recalculation. The other 162 controls remain visible but locked at unresolved workbook circularity boundaries.',
+        'Auditability: outputs expose their workbook coordinates, formula families, and direct precedents. A “Current” badge means this browser run passed the implemented checks—not that the model has received investment-committee approval.',
+        'Use restriction: this build is for product review, testing, and formula validation only. Do not rely on it for investment, underwriting, valuation, tax, legal, accounting, fundraising, or capital-allocation decisions.',
+        'Production release still requires 169/169 editable-input recalculation, scenario and waterfall parity, native XLSX round-trip testing, independent model review, security controls, and signed mobile/desktop acceptance evidence.',
       ],
       confirmLabel: 'I understand — open preview',
     },
