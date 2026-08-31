@@ -19,6 +19,7 @@ export default function MarketingLayout({ children }: Readonly<{ children: React
           <>
             <NavbarLink href="/#stats">About</NavbarLink>
             <NavbarLink href="/#case-studies">Case Studies</NavbarLink>
+            <NavbarLink href="/presentation">Presentation</NavbarLink>
             <NavbarLink href="https://malcolm-decuire-portfolio-app-971002445190.us-central1.run.app/aidemo">
               Portfolio
             </NavbarLink>
