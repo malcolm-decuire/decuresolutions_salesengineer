@@ -9,6 +9,7 @@ yarn-error.log*
 
 # environment files
 .env*
+!demo/.env.example
 
 # editor
 .vscode/

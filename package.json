@@ -1,6 +1,9 @@
 {
   "name": "decuresolutions_se_20250706",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "workspaces": [
     "demo"
   ],
