@@ -87,6 +87,42 @@ describe('POST /api/grace', () => {
     await expect(response.json()).resolves.toEqual({ error: 'The selected demo slice or chat history is invalid.' })
   })
 
+  it('normalizes an environment assignment copied into the Vercel secret value', async () => {
+    process.env.OPENAI_API_KEY = ' OPENAI_API_KEY="test-key" '
+    createResponse.mockResolvedValue({ id: 'resp_normalized', output_text: 'Normalized key answer' })
+
+    const response = await POST(
+      new Request('http://localhost/api/grace', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ slice: 'lease', question: 'What is the risk?', history: [] }),
+      }),
+    )
+
+    expect(response.status).toBe(200)
+    expect(createResponse).toHaveBeenCalled()
+  })
+
+  it.each([
+    [401, 'OPENAI_AUTH_FAILED', 'Replace OPENAI_API_KEY'],
+    [429, 'OPENAI_RATE_LIMITED', 'project quota'],
+    [404, 'OPENAI_PROMPT_NOT_FOUND', 'configured OpenAI prompt'],
+  ])('returns an actionable safe error for OpenAI status %s', async (status, code, message) => {
+    process.env.OPENAI_API_KEY = 'test-key'
+    createResponse.mockRejectedValue(Object.assign(new Error('sensitive upstream detail'), { status }))
+
+    const response = await POST(
+      new Request('http://localhost/api/grace', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ slice: 'training', question: 'What is overdue?', history: [] }),
+      }),
+    )
+
+    expect(response.status).toBe(502)
+    await expect(response.json()).resolves.toEqual({ code, error: expect.stringContaining(message) })
+  })
+
   it.each([
     ['lease', 'Lease renewal risk'],
     ['training', 'Training compliance'],

@@ -10,6 +10,43 @@ type DemoSlice = 'lease' | 'training' | 'maintenance'
 type ChatTurn = { role: 'user' | 'assistant'; content: string }
 type GraceRequest = { question?: unknown; history?: unknown; slice?: unknown }
 
+function configuredApiKey() {
+  const raw = process.env.OPENAI_API_KEY?.trim()
+  if (!raw) return ''
+
+  const withoutAssignment = raw.startsWith('OPENAI_API_KEY=') ? raw.slice('OPENAI_API_KEY='.length).trim() : raw
+  const quote = withoutAssignment[0]
+  return (quote === '"' || quote === "'") && withoutAssignment.at(-1) === quote
+    ? withoutAssignment.slice(1, -1).trim()
+    : withoutAssignment
+}
+
+function upstreamFailure(error: unknown) {
+  const status =
+    error && typeof error === 'object' && 'status' in error && typeof error.status === 'number' ? error.status : null
+
+  if (status === 401) {
+    return {
+      code: 'OPENAI_AUTH_FAILED',
+      error: 'Grace cannot authenticate with OpenAI. Replace OPENAI_API_KEY in this environment and redeploy.',
+    }
+  }
+  if (status === 429) {
+    return {
+      code: 'OPENAI_RATE_LIMITED',
+      error: 'Grace is temporarily rate-limited by OpenAI. Check project quota or try again shortly.',
+    }
+  }
+  if (status === 404) {
+    return {
+      code: 'OPENAI_PROMPT_NOT_FOUND',
+      error: 'Grace cannot access the configured OpenAI prompt from this API project.',
+    }
+  }
+
+  return { code: 'OPENAI_REQUEST_FAILED', error: 'Grace could not complete that request. Please try again.' }
+}
+
 const sliceContexts: Record<DemoSlice, string> = {
   lease: `Lease renewal risk — Oakline Commons, 312 units.
 Approved synthetic sources: resident ledger, renewal calendar, maintenance work orders, resident survey feedback.
@@ -49,7 +86,7 @@ function parseHistory(value: unknown): ChatTurn[] | null {
 
 export function GET() {
   return Response.json({
-    configured: Boolean(process.env.OPENAI_API_KEY),
+    configured: Boolean(configuredApiKey()),
     environment: process.env.VERCEL_ENV ?? 'local',
     prompt: { id: PROMPT_ID, version: PROMPT_VERSION },
   })
@@ -77,7 +114,8 @@ export async function POST(request: Request) {
   if (!slice || history === null) {
     return Response.json({ error: 'The selected demo slice or chat history is invalid.' }, { status: 422 })
   }
-  if (!process.env.OPENAI_API_KEY) {
+  const apiKey = configuredApiKey()
+  if (!apiKey) {
     const setupLocation = process.env.VERCEL
       ? 'Set OPENAI_API_KEY in Vercel Project Settings for this deployment, then redeploy.'
       : 'Add OPENAI_API_KEY to demo/.env.local, then restart npm run dev.'
@@ -88,7 +126,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+    const openai = new OpenAI({ apiKey })
     const response = await openai.responses.create({
       prompt: { id: PROMPT_ID, version: PROMPT_VERSION },
       input: [
@@ -113,6 +151,6 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error('Grace response failed', error)
-    return Response.json({ error: 'Grace could not complete that request. Please try again.' }, { status: 502 })
+    return Response.json(upstreamFailure(error), { status: 502 })
   }
 }
