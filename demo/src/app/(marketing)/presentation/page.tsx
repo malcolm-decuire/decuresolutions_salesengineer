@@ -134,6 +134,36 @@ const benefits = [
   ],
 ]
 
+const proofPoints = [
+  {
+    name: 'Morgan Stanley',
+    mark: 'MS',
+    detail: 'GPT-4 assistant adopted across wealth management teams',
+  },
+  {
+    name: 'Klarna.',
+    mark: 'K.',
+    detail: 'Customer-service assistant powered by OpenAI',
+  },
+  {
+    name: 'stripe',
+    mark: 'S',
+    detail: 'GPT-4 used across support and developer documentation',
+  },
+  {
+    name: 'JLL',
+    mark: 'JLL',
+    detail: 'JLL GPT brings GPT-4 into commercial real estate',
+  },
+]
+
+const agenda = [
+  ['01', 'Discovery', '5 min', 'Live questions to understand priorities, constraints and success criteria.'],
+  ['02', 'Technical evaluation', '5 min', 'Assess feasibility, fit and the realities of your environment.'],
+  ['03', 'Value proposition', '5 min', 'Connect the proposed solution to what we uncover together.'],
+  ['04', 'Technical deep-dive', '15 min', 'Architecture, data flow, integrations, security and authentication.'],
+]
+
 function SparkIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="size-5">
@@ -314,6 +344,68 @@ export default function PresentationPage() {
               <a href="#demo">Demo</a>
             </div>
           </nav>
+          <div className="pt-10 lg:pt-14">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-[10px] font-semibold tracking-[0.22em] text-[#6ee7a8] uppercase">
+                  OpenAI in production
+                </p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-[-0.035em] sm:text-3xl">
+                  Proven with category leaders.
+                </h2>
+              </div>
+              <p className="max-w-md text-xs/5 text-white/38">
+                Publicly documented examples of organizations using OpenAI technology. No partnership or endorsement
+                is implied.
+              </p>
+            </div>
+            <div className="mt-6 grid grid-cols-2 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.025] lg:grid-cols-4">
+              {proofPoints.map((company, index) => (
+                <article
+                  key={company.name}
+                  aria-label={`${company.name}: ${company.detail}`}
+                  className={`min-h-40 p-4 sm:p-6 ${index % 2 === 0 ? 'border-r border-white/10' : ''} ${index < 2 ? 'border-b border-white/10 lg:border-b-0' : ''} lg:border-r lg:border-b-0 lg:last:border-r-0`}
+                >
+                  <div className="flex h-12 items-center gap-3">
+                    <span className="grid size-9 shrink-0 place-items-center rounded-xl border border-white/12 bg-white/[0.05] text-xs font-bold text-[#6ee7a8]">
+                      {company.mark}
+                    </span>
+                    <p
+                      className={`font-semibold text-white ${company.name === 'Morgan Stanley' ? 'text-sm tracking-[-0.02em] sm:text-base' : company.name === 'stripe' ? 'text-2xl tracking-[-0.06em]' : 'text-xl tracking-[-0.04em]'}`}
+                    >
+                      {company.name}
+                    </p>
+                  </div>
+                  <p className="mt-4 text-[11px]/5 text-white/42">{company.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div id="agenda" className="scroll-mt-6 pt-12 lg:pt-16">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-[10px] font-semibold tracking-[0.22em] text-[#6ee7a8] uppercase">Today’s agenda</p>
+                <h2 className="mt-2 text-2xl font-semibold tracking-[-0.035em] sm:text-3xl">Thirty minutes, start to finish.</h2>
+              </div>
+              <span className="hidden rounded-full border border-[#6ee7a8]/20 bg-[#6ee7a8]/[0.06] px-4 py-2 text-xs font-semibold text-[#9df0c2] sm:block">
+                30 min
+              </span>
+            </div>
+            <ol className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-4">
+              {agenda.map(([number, title, duration, description]) => (
+                <li key={number} className="bg-[#0b0e10] p-5 sm:p-6">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-semibold text-[#6ee7a8]">{number}</span>
+                    <span className="rounded-full bg-white/[0.06] px-2.5 py-1 text-[10px] font-semibold text-white/50">
+                      {duration}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold">{title}</h3>
+                  <p className="mt-2 text-xs/5 text-white/42">{description}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
           <div className="grid gap-12 pt-14 lg:grid-cols-[1.3fr_.7fr] lg:items-end lg:pt-24">
             <div>
               <p className="mb-5 text-xs font-semibold tracking-[0.24em] text-[#6ee7a8] uppercase">
