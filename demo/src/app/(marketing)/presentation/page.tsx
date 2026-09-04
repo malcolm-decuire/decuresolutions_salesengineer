@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { FormEvent, Fragment, ReactNode, useState } from 'react'
 
 type DemoMessage = {
@@ -137,22 +138,26 @@ const benefits = [
 const proofPoints = [
   {
     name: 'Morgan Stanley',
-    mark: 'MS',
+    logo: '/logos/morgan-stanley.svg',
+    logoClass: 'h-6 w-auto',
     detail: 'GPT-4 assistant adopted across wealth management teams',
   },
   {
-    name: 'Klarna.',
-    mark: 'K.',
+    name: 'Klarna',
+    logo: '/logos/klarna.svg',
+    logoClass: 'h-7 w-auto',
     detail: 'Customer-service assistant powered by OpenAI',
   },
   {
-    name: 'stripe',
-    mark: 'S',
+    name: 'Stripe',
+    logo: '/logos/stripe.svg',
+    logoClass: 'h-8 w-auto',
     detail: 'GPT-4 used across support and developer documentation',
   },
   {
     name: 'JLL',
-    mark: 'JLL',
+    logo: '/logos/jll.svg',
+    logoClass: 'h-10 w-auto',
     detail: 'JLL GPT brings GPT-4 into commercial real estate',
   },
 ]
@@ -366,15 +371,14 @@ export default function PresentationPage() {
                   aria-label={`${company.name}: ${company.detail}`}
                   className={`min-h-40 p-4 sm:p-6 ${index % 2 === 0 ? 'border-r border-white/10' : ''} ${index < 2 ? 'border-b border-white/10 lg:border-b-0' : ''} lg:border-r lg:border-b-0 lg:last:border-r-0`}
                 >
-                  <div className="flex h-12 items-center gap-3">
-                    <span className="grid size-9 shrink-0 place-items-center rounded-xl border border-white/12 bg-white/[0.05] text-xs font-bold text-[#6ee7a8]">
-                      {company.mark}
-                    </span>
-                    <p
-                      className={`font-semibold text-white ${company.name === 'Morgan Stanley' ? 'text-sm tracking-[-0.02em] sm:text-base' : company.name === 'stripe' ? 'text-2xl tracking-[-0.06em]' : 'text-xl tracking-[-0.04em]'}`}
-                    >
-                      {company.name}
-                    </p>
+                  <div className="flex h-14 items-center rounded-xl bg-white px-3">
+                    <Image
+                      src={company.logo}
+                      alt={`${company.name} logo`}
+                      width={220}
+                      height={64}
+                      className={`max-w-full object-contain object-left ${company.logoClass}`}
+                    />
                   </div>
                   <p className="mt-4 text-[11px]/5 text-white/42">{company.detail}</p>
                 </article>
