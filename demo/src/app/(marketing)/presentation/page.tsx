@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useState } from 'react'
+import { FormEvent, Fragment, ReactNode, useState } from 'react'
 
 type DemoMessage = {
   role: 'user' | 'assistant' | 'tool'
@@ -142,6 +142,69 @@ function SparkIcon() {
         fill="currentColor"
       />
     </svg>
+  )
+}
+
+function inlineMarkdown(value: string): ReactNode[] {
+  return value
+    .split(/(\*\*[^*]+\*\*)/g)
+    .filter(Boolean)
+    .map((part, index) =>
+      part.startsWith('**') && part.endsWith('**') ? (
+        <strong key={index} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      ) : (
+        <Fragment key={index}>{part}</Fragment>
+      ),
+    )
+}
+
+function StructuredAnswer({ body }: { body: string }) {
+  const lines = body
+    .replace(/\s+(?=\*\*(?:Compliance|Lease rules & limitations|Other landlord items)\*\*)/gi, '\n\n')
+    .replace(/\s+-\s+(?=\*\*)/g, '\n- ')
+    .replace(/\s+(?=\d+\.\s+\*\*)/g, '\n')
+    .split(/\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean)
+
+  return (
+    <div className="space-y-3 text-sm/6 text-white/75 sm:text-[15px]/7">
+      {lines.map((line, index) => {
+        const heading = line.match(/^#{1,3}\s+(.+)$/)?.[1]
+        const boldHeading = line.match(/^\*\*([^*]+)\*\*:?$/)?.[1]
+        if (heading || boldHeading) {
+          return (
+            <h3 key={index} className="pt-2 text-base font-semibold tracking-[-0.01em] text-[#8ef0bb] first:pt-0">
+              {heading ?? boldHeading}
+            </h3>
+          )
+        }
+
+        const bullet = line.match(/^[-*]\s+(.+)$/)?.[1]
+        if (bullet) {
+          return (
+            <div key={index} className="grid grid-cols-[auto_1fr] gap-2.5 pl-1">
+              <span aria-hidden="true" className="mt-[0.68rem] size-1.5 rounded-full bg-[#6ee7a8]" />
+              <p>{inlineMarkdown(bullet)}</p>
+            </div>
+          )
+        }
+
+        const numbered = line.match(/^(\d+)\.\s+(.+)$/)
+        if (numbered) {
+          return (
+            <div key={index} className="grid grid-cols-[1.5rem_1fr] gap-2 pl-1">
+              <span className="font-semibold text-[#6ee7a8]">{numbered[1]}.</span>
+              <p>{inlineMarkdown(numbered[2])}</p>
+            </div>
+          )
+        }
+
+        return <p key={index}>{inlineMarkdown(line)}</p>
+      })}
+    </div>
   )
 }
 
@@ -388,7 +451,11 @@ export default function PresentationPage() {
                       >
                         {message.label}
                       </p>
-                      <p className="text-sm/6 sm:text-[15px]/7">{message.body}</p>
+                      {message.role === 'assistant' && message.generated ? (
+                        <StructuredAnswer body={message.body} />
+                      ) : (
+                        <p className="text-sm/6 whitespace-pre-wrap sm:text-[15px]/7">{message.body}</p>
+                      )}
                       {message.meta && (
                         <p
                           className={`mt-3 text-[10px] ${message.role === 'user' ? 'text-[#174c32]/60' : 'text-white/32'}`}
